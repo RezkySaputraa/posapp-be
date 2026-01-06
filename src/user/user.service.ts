@@ -33,4 +33,9 @@ export class UserService {
       updatedAt: user.updatedAt,
     };
   }
+
+  async getData(): Promise<IResponseUser[]> {
+    const result = await this.prismaService.todo.findMany();
+    return result;
+  }
 }
